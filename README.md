@@ -3,15 +3,15 @@
 
 The [Mental Health Research Network (MHRN)](http://hcsrn.org/mhrn/en/) Suicide Risk Prediction Model (SRPM) encompasses the following major programming tasks:
 
-1. **Identify denominator (SAS)**
-    1. Recommended: Perform QA on PHQ item #9 data (SAS)
-2. Create analytic data set (SAS)
-3. Implement model (R)
+1. **Identify denominator (code written in [Base SAS®](http://www.sas.com/en_us/software/base-sas.html))**
+    1. Recommended: Perform quality checks on [Patient Health Questionnaire (PHQ-9)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1495268/) data (code written in Base SAS)
+2. Create analytic data set (code written in Base SAS)
+3. Implement model (code written in [R](https://www.r-project.org/))
 
 In addition to this README, the srpm-denom repository contains the following materials that were used to perform task 1 within the MHRN.
 
 * **SAS program:** SRPM_DENOM.sas
-    * **Details:** Developed in SAS v9.4 for use in the [HCSRN VDW](http://www.hcsrn.org/en/Tools%20&%20Materials/VDW/) programming environment
+    * **Details:** Developed in SAS 9.4 for use in the [HCSRN VDW](http://www.hcsrn.org/en/Tools%20&%20Materials/VDW/) programming environment
     * **Purpose:** Identifies a VDW-based denominator of internal (i.e., [Epic](http://www.epic.com)-based) adult outpatient clinic visits that occurred between January 1, 2009 (or date of local Epic implementation, whichever happened more recently) and June 20, 2015 and were associated with one or more of the following: 1) mental health department, 2) mental health specialty provider, 3) psychotherapy procedures, or 4) selected mental health diagnoses. The program summarizes unique encounters by each of the four methods of inclusion (i.e., department, provider, procedure, or diagnosis) to facilitate review within and across participating sites.
     * **Input VDW data sets:** Demographic, Dx, Encounter, Provider Specialty, Px
     * **Dependencies:** StdVars.sas; local modifications to identify internal, Epic-based encounters
